@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/jquery.contextMenu.css"/>
+    <title></title>
+</head>
+<body>
+
+
+    <div id="test" style="margin: 100px 0 0 100px;height: 200px;width: 100px;border: 1px solid #000000;overflow-x: hidden;position: relative">
+        asdfasdfasdfasdfasd
+        asdfasdfasdfasdfasdasdfasdfasdfasdfasd
+        asdfasdfasdfasdfasd
+        asdfasdfasdfasdfasd
+        asdfasdfasdfasdfasd
+        asdfasdfasdfasdfasd
+        asdfasdfasdfasdfasd
+        asdfasdfasdfasdfasd
+        asdfasdfasdfasdfasd
+        asdfasdfasdfasdfasd
+        asdfasdfasdfasdfasd
+        asdfasdfasdfasdfasd
+        asdfasdfasdfasdfasd
+        asdfasdfasdfasdfasd
+    </div>
+    <button id="btn1">click1</button>
+    <button id="btn2">click2</button>
+
+<script src="js/jquery-1.9.0.js"></script>
+<script src="js/jquery.contextMenu.js"></script>
+<script>
+    $(function(){
+        var cm=$("#test").contextMenu({
+            width:"200px",
+            id:"myContextMenu",
+            items:[{
+                id:"item1",
+                text:"item1",
+                icon:"arrows",
+                action:function(){
+                    alert("items1")
+                },
+                children:[{
+                    id:"item4",
+                    text:"item4",
+                    action:function(){
+                        alert("items4")
+                    }
+                },"-",{
+                    id:"item5",
+                    text:"item5",
+                    icon:"arrows",
+                    action:function(){
+                        alert("items5")
+                    },
+                    children:[{
+                        id:"item6",
+                        text:"item6",
+                        action:function(){
+                            alert("items6")
+                        }
+                    }]
+                }]
+            },"-",{
+                id:"item2",
+                text:"item2",
+                icon:"play",
+                action:function(){
+                    alert("items2")
+                }
+            },{
+                id:"item3",
+                text:"item3",
+                action:function(){
+                    alert("items3")
+                },
+                children:[{
+                    id:"item7",
+                    text:"item7",
+                    action:function(){
+                        alert("items7")
+                    }
+                }]
+            }]
+        });
+        $("#btn1").click(function(){
+            cm.setItemDisabled("item3");
+        })
+        $("#btn2").click(function(){
+            cm.setItemEnabled("item3");
+        })
+
+        /*$("#test1").delegate("div.cls",{
+            click:function(){
+                console.log($(this).html())
+            },
+            mouseover:function(){
+                console.log(124)
+            }
+        })
+        $("#btn").click(function(){
+            $("#test1").find("div").addClass("cls");
+        })*/
+    })
+</script>
+</body>
+</html>
