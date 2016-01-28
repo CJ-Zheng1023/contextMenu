@@ -19,7 +19,7 @@
         var menuDefaults={
             id:"root",
             items:[],
-            width:"100px",
+            width:"200px",
             prefix:"contextmenu-"
         }
         this.panel;
@@ -71,6 +71,14 @@
                 }
                 var x= e.pageX;
                 var y= e.pageY;
+                //主菜单位置矫正开始
+                if(x-$("body").scrollLeft()+contextMenu.panel.outerWidth()>$(window).width()){
+                    x=x-contextMenu.panel.outerWidth();
+                }
+                if(y-$("body").scrollTop()+contextMenu.panel.outerHeight()>$(window).height()){
+                    y=y-contextMenu.panel.outerHeight();
+                }
+                //主菜单位置矫正结束
                 contextMenu.panel.css({
                     left:x,
                     top:y
@@ -125,8 +133,7 @@
                 shiftKey : false
             },
             children:[],
-            action:function(item){},
-            tip:"",
+            action:function(){},
             enable:true
         };
         if(typeof options=="object"){
@@ -208,9 +215,18 @@
                 mouseenter:function(){
                     $(this).addClass("hover");
                     if(me.childrenJqueryObj){
+                        var top= 0,left=me.jqueryObj.outerWidth();
+                        //子菜单位置矫正开始
+                        if(me.jqueryObj.offset().left+me.jqueryObj.outerWidth()+me.childrenJqueryObj.outerWidth()-$("body").scrollLeft()>$(window).width()){
+                            left=-left;
+                        }
+                        if(me.jqueryObj.offset().top+me.jqueryObj.outerHeight()+me.childrenJqueryObj.outerHeight()-$("body").scrollTop()>$(window).height()){
+                            top=-me.childrenJqueryObj.outerHeight()+me.jqueryObj.outerHeight();
+                        }
+                        //子菜单位置矫正结束
                         me.childrenJqueryObj.css({
-                            top:0,
-                            left:me.jqueryObj.outerWidth()
+                            top:top,
+                            left:left
                         }).show().find("a.wrapper").removeClass("hover");
                     }
                 },

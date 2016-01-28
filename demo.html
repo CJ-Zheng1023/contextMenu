@@ -9,24 +9,11 @@
 <body>
 
 
-    <div id="test" style="margin: 100px 0 0 100px;height: 200px;width: 100px;border: 1px solid #000000;overflow-x: hidden;position: relative">
-        asdfasdfasdfasdfasd
-        asdfasdfasdfasdfasdasdfasdfasdfasdfasd
-        asdfasdfasdfasdfasd
-        asdfasdfasdfasdfasd
-        asdfasdfasdfasdfasd
-        asdfasdfasdfasdfasd
-        asdfasdfasdfasdfasd
-        asdfasdfasdfasdfasd
-        asdfasdfasdfasdfasd
-        asdfasdfasdfasdfasd
-        asdfasdfasdfasdfasd
-        asdfasdfasdfasdfasd
-        asdfasdfasdfasdfasd
-        asdfasdfasdfasdfasd
+    <div id="test" style="height: 900px;width: 100%;border: 1px solid #000000;text-align: center;">
+        <h1 style="margin-top: 200px;">鼠标右键点击此区域</h1>
     </div>
-    <button id="btn1">click1</button>
-    <button id="btn2">click2</button>
+    <!--<button id="btn1">click1</button>
+    <button id="btn2">click2</button>-->
 
 
 <script src="js/jquery-1.9.0.js"></script>
@@ -98,15 +85,27 @@
                     action:function(){
                         alert("items7")
                     }
+                },{
+                    id:"item8",
+                    text:"item8",
+                    action:function(){
+                        alert("items8")
+                    }
+                },{
+                    id:"item9",
+                    text:"item9",
+                    action:function(){
+                        alert("items9")
+                    }
                 }]
             }]
         });
-        $("#btn1").click(function(){
+        /*$("#btn1").click(function(){
             cm.setItemDisabled("item3");
         })
         $("#btn2").click(function(){
             cm.setItemEnabled("item3");
-        })
+        })*/
     })
 </script>
 </body>
