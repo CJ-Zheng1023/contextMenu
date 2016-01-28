@@ -8,7 +8,7 @@
 
 
     /**
-     * @author zhengchj
+     * @author AfterWin
      * @mail CJ_Zheng1023@hotmail.com
      *
      * @param 目标对象
@@ -30,7 +30,7 @@
 
     $.extend(ContextMenu.prototype,{
         /**
-         * @author zhengchj
+         * @author AfterWin
          * @mail CJ_Zheng1023@hotmail.com
          *
          * @param id 菜单项唯一标识
@@ -40,7 +40,7 @@
             this.panel.find("#"+_prefix+id).children("a.wrapper").addClass("disabled");
         },
         /**
-         * @author zhengchj
+         * @author AfterWin
          * @mail CJ_Zheng1023@hotmail.com
          *
          * @param id 菜单项唯一标识
@@ -52,7 +52,7 @@
     });
 
     /**
-     * @author zhengchj
+     * @author AfterWin
      * @mail CJ_Zheng1023@hotmail.com
      *
      * @param target 目标对象
@@ -93,7 +93,7 @@
     }
 
     /**
-     * @author zhengchj
+     * @author AfterWin
      * @mail CJ_Zheng1023@hotmail.com
      *
      * @param panel 菜单jquery对象
@@ -116,7 +116,7 @@
     }
 
     /**
-     * @author zhengchj
+     * @author AfterWin
      * @mail CJ_Zheng1023@hotmail.com
      *
      * @param options 菜单配置项
@@ -149,7 +149,7 @@
 
     $.extend(Item.prototype,{
         /**
-         * @author zhengchj
+         * @author AfterWin
          * @mail CJ_Zheng1023@hotmail.com
          *
          * @returns {菜单项jquery对象}
@@ -177,7 +177,7 @@
 
         },
         /**
-         * @author zhengchj
+         * @author AfterWin
          * @mail CJ_Zheng1023@hotmail.com
          *
          * @param children 子菜单项
@@ -200,7 +200,7 @@
             this.childrenJqueryObj=$childrenArea;
         },
         /**
-         * @author zhengchj
+         * @author AfterWin
          * @mail CJ_Zheng1023@hotmail.com
          * @public 绑定菜单项事件
          *
