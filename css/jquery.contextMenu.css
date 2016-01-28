@@ -6,7 +6,7 @@
     display: none;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: rgb(51, 51, 51);
-    min-width: 150px;
+    min-width: 200px;
     font-size: 14px;
 }
 .contextmenu-panel ul{
@@ -25,8 +25,9 @@
 }
 .contextmenu-panel ul li a.wrapper{
     display: block;
-    padding: 5px 10px;
+    padding: 5px 30px 5px 10px;
     cursor: pointer;
+    white-space:nowrap;
 }
 .contextmenu-panel ul li a.disabled{
     color: rgb(153,153,153);
@@ -37,13 +38,19 @@
     padding-left: 25px;
     position: relative;
 }
+.contextmenu-panel ul li a span.hotkeys{
+    color: rgb(200,200,200);
+    font-size: 12px;
+}
 .contextmenu-panel ul li a span i{
     position: absolute;
     top: 0;
     left: 0;
 }
 .contextmenu-panel ul li a i.arrow{
-    float: right;
+    position: absolute;
+    top: 7px;
+    right: 5px;
 }
 .contextmenu-children-panel{
     background-color: #ffffff;
@@ -51,7 +58,7 @@
     padding: 2px;
     display: none;
     position: absolute;
-    min-width: 150px;
+    min-width: 200px;
 }
 
 .contextmenu-panel ul li a.hover{

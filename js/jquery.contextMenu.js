@@ -4,6 +4,7 @@
     var CONTEXTMENU_CHILDREN_PANEL_CSS="contextmenu-children-panel";
     var itemManger={};
     var _prefix="contextmenu-";
+    var SHIFT="SHIFT";
 
 
     /**
@@ -118,7 +119,11 @@
             id:"item",
             text:"",
             icon:"",
-            hotkeys:[],
+            hotkeys:{
+                keyCode : -1,
+                keyValue:"",
+                shiftKey : false
+            },
             children:[],
             action:function(item){},
             tip:"",
@@ -212,6 +217,22 @@
                 mouseleave:function(){
                     $(this).removeClass("hover");
                     $(this).find("."+CONTEXTMENU_CHILDREN_PANEL_CSS).hide();
+                }
+            })
+            var hotkeys=me.options.hotkeys;
+            if(hotkeys.keyCode==-1){
+                return;
+            }
+            me.jqueryObj.children("a.wrapper").find("span").after("<span class='hotkeys'>"+SHIFT+"+"+hotkeys.keyValue+"</span>");
+            $("body").bind({
+                keydown:function(e){
+                    if(me.jqueryObj.children("a.wrapper").hasClass("disabled")){
+                        return;
+                    }
+                    if(e.keyCode === hotkeys.keyCode && e.shiftKey === hotkeys.shiftKey)
+                        if(me.jqueryObj.parent().parent().css("display")!="none"){
+                            me.options.action();
+                        }
                 }
             })
         }

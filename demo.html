@@ -28,6 +28,7 @@
     <button id="btn1">click1</button>
     <button id="btn2">click2</button>
 
+
 <script src="js/jquery-1.9.0.js"></script>
 <script src="js/jquery.contextMenu.js"></script>
 <script>
@@ -51,6 +52,11 @@
                 },"-",{
                     id:"item5",
                     text:"item5",
+                    hotkeys:{
+                        keyCode:82,
+                        keyValue:"R",
+                        shiftKey:true
+                    },
                     icon:"arrows",
                     action:function(){
                         alert("items5")
@@ -58,6 +64,11 @@
                     children:[{
                         id:"item6",
                         text:"item6",
+                        hotkeys:{
+                            keyCode:65,
+                            keyValue:"A",
+                            shiftKey:true
+                        },
                         action:function(){
                             alert("items6")
                         }
@@ -73,6 +84,11 @@
             },{
                 id:"item3",
                 text:"item3",
+                hotkeys:{
+                    keyCode:66,
+                    keyValue:"B",
+                    shiftKey:true
+                },
                 action:function(){
                     alert("items3")
                 },
@@ -91,18 +107,6 @@
         $("#btn2").click(function(){
             cm.setItemEnabled("item3");
         })
-
-        /*$("#test1").delegate("div.cls",{
-            click:function(){
-                console.log($(this).html())
-            },
-            mouseover:function(){
-                console.log(124)
-            }
-        })
-        $("#btn").click(function(){
-            $("#test1").find("div").addClass("cls");
-        })*/
     })
 </script>
 </body>
