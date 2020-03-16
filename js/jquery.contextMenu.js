@@ -162,7 +162,7 @@
             }else{
                 var $text=$("<span></span>").text(me.options.text);
                 if(me.options.icon){
-                    var $icon=$("<i></i>").addClass("fa").addClass("fa-"+me.options.icon);
+                    var $icon=$("<i></i>").addClass(me.options.icon);
                     $text.append($icon);
                 }
                 var $a=$("<a class='wrapper'></a>").append($text);
@@ -196,7 +196,7 @@
                 $container.append($item);
             }
             $childrenArea.append($container);
-            this.jqueryObj.children("a.wrapper").append("<i class='fa fa-chevron-right arrow'></i>").append($childrenArea);
+            this.jqueryObj.children("a.wrapper").append("<i class='arrow'>&gt;</i>").append($childrenArea);
             this.childrenJqueryObj=$childrenArea;
         },
         /**
